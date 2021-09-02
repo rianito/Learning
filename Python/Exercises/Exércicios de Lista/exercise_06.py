@@ -1,21 +1,17 @@
 '''
-5. Faça um Programa que leia 20 números inteiros e armazene-os num vetor. 
-Armazene os números pares no vetor PAR e os números IMPARES no vetor impar. 
-Imprima os três vetores.
+6. Faça um Programa que peça as quatro notas de 10 alunos, calcule e armazene 
+num vetor a média de cada aluno, imprima o número de alunos com média maior ou 
+igual a 7.0.
 '''
 
-numeros = []
-pares = []
-impares = []
+medias = []
 
-for i in range(20):
-    numero = int(input("Digite um numero inteiro: "))
-    numeros.append(numero)
-    if numero%2 == 0:
-        pares.append(numero)
-    else:
-        impares.append(numero)
+for i in range(10):
+    media = 0
+    for ii in range(4):
+        media += float(input(f"Digite a nota {ii+1} do aluno {i+1}: "))
+    medias.append(media/4)
 
-print(numeros)
-print(pares)
-print(impares)
+for i in range(len(medias)):
+    if medias[i] >= 7:
+        print(f"Aluno {i+1}: {medias[i]}")
