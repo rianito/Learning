@@ -1,5 +1,5 @@
 import random
-palavras = ["macaco","teste"]
+palavras = ["macaco","girafa","cavalo","cachorro","gato"]
 palavra = random.choice(palavras)
 descobrindo = []
 achou = 0
