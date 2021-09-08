@@ -2,17 +2,14 @@
 4. Faça um Programa que verifique se uma letra digitada é vogal ou consoante.
 '''
 
-vogais = ["A","a","E","e","I","i","O","o","U","u"]
+vogais = ["A","E","I","O","U"]
 
-while True:
-    letra = input("Digite uma letra: ")
-    if letra == "PARAR":
+letra = input("Digite uma letra: ").upper()
+achou = False
+for i in vogais:
+    if letra == i:
+        achou = True
         break
-    achou = False
-    for i in vogais:
-        if letra == i:
-            achou = True
-            break
     if achou:
         print("\nFoi uma vogal\n")
     else:  
