@@ -10,7 +10,5 @@ for i in vogais:
     if letra == i:
         achou = True
         break
-    if achou:
-        print("\nFoi uma vogal\n")
-    else:  
-        print("\nFoi uma consoante\n")
+
+print("\nFoi uma vogal\n") if achou else print("\nFoi uma consoante\n")
