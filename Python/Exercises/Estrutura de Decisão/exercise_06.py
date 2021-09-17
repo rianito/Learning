@@ -7,15 +7,11 @@ numeros = []
 for i in range(3):
     numeros.append(float(input("Digite um numero: ")))
 
-maior = 0
-first = True
+maior = 0.0
 
 for i in numeros:
-    if first:
-        first = False
+    maior = numeros[0]
+    if i > maior:
         maior = i
-    else:
-        if i > maior:
-            maior = i
 
 print(f"O maior numero foi o: {maior}")
