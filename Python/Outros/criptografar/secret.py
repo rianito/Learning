@@ -4,6 +4,9 @@ chave = f0.read()
 texto = f1.read()
 f1 = open("texto.txt","w")
 
+
+''' Mudei para o split do Python
+
 def split_do_rian(string,separator):
     result = []
     handle = ""
@@ -14,6 +17,7 @@ def split_do_rian(string,separator):
         else:
             handle = handle + i
     return result
+'''
 
 while True:
     resposta = input('''
@@ -28,7 +32,7 @@ while True:
         for i in texto:
             f1.write(f"{ord(i)+int(chave)} ")
     elif resposta == "2":
-            texto = split_do_rian(texto," ")
+            texto = texto.split(" ")
             for i in texto:
                 f1.write(f"{chr(int(i)-int(chave))}")
     elif resposta == "3":

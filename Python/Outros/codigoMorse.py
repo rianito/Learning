@@ -39,7 +39,7 @@ codigos = {
         "7":"--...",
         "8":"---..",
         "9":"----."}
-resposta = input()
+resposta = input().upper()
 traduzido = ""
 for i in resposta:
         
@@ -49,6 +49,6 @@ for i in resposta:
         try:
             traduzido += f"{codigos[i]} "
         except:
-            traduzido = "Use apenas números e letras maiúsculas sem acento."
+            traduzido = "Use apenas números e letras sem acento. ( ! ? , . são permitidos )"
             break
 print(traduzido)
