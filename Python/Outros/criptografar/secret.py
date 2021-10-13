@@ -1,23 +1,22 @@
-f0 = open(".chave.txt","r")
-f1 = open("texto.txt","r")
-chave = f0.read()
-texto = f1.read()
-f1 = open("texto.txt","w")
+f = open(".chave.txt","r")
+chave = f.read()
+f.close()
+f = open("texto.txt","r")
+texto = f.read()
+f.close()
 
+#Mudei para o split do Python
 
-''' Mudei para o split do Python
-
-def split_do_rian(string,separator):
-    result = []
-    handle = ""
-    for i in string:
-        if i == separator:
-            result.append(handle)
-            handle = ""
-        else:
-            handle = handle + i
-    return result
-'''
+#def split_do_rian(string,separator):
+#    result = []
+#    handle = ""
+#    for i in string:
+#        if i == separator:
+#            result.append(handle)
+#            handle = ""
+#        else:
+#            handle = handle + i
+#    return result
 
 while True:
     resposta = input('''
@@ -28,15 +27,20 @@ while True:
 
     ''')
 
-    if resposta == "1":
+    if resposta == '1':
+        f = open('texto.txt','w')
         for i in texto:
-            f1.write(f"{ord(i)+int(chave)} ")
+            f.write(f"{ord(i)+int(chave)} ")
+            f.close()
     elif resposta == "2":
-            texto = texto.split(" ")
-            for i in texto:
-                f1.write(f"{chr(int(i)-int(chave))}")
+        texto = texto.split(" ")
+        for i in texto:
+            f = open('texto.txt','w')
+            f.write(f"{chr(int(i)-int(chave))}")
+            f.close()
     elif resposta == "3":
-        f0 = open(".chave.txt","w")
-        f0.write(input("DIGITE A NOVA CHAVE (APENAS NÚMEROS): "))
+        f = open(".chave.txt","w")
+        f.write(input("DIGITE A NOVA CHAVE (APENAS NÚMEROS): "))
+        f.close()
     else:
         break

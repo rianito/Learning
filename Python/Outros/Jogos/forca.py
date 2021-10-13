@@ -1,11 +1,9 @@
 import random
 palavras = ["macaco","girafa","cavalo","cachorro","gato"]
 palavra = random.choice(palavras)
-descobrindo = []
+descobrindo = ["_"]*len(palavra)
 achou = 0
 antes = 0
-for i in range(len(palavra)):
-    descobrindo.append("_")
 tentativas = 5
 while tentativas:
     letra = input("Escolha uma letra: ").upper()
