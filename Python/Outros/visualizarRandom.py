@@ -9,3 +9,5 @@ for i in range(0,11):
     for ii in range(lista[i],0,-1):
         print("|",end = "")
     print(f"\n{lista[i]}\n")
+
+

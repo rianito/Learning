@@ -31,13 +31,13 @@ while True:
         f = open('texto.txt','w')
         for i in texto:
             f.write(f"{ord(i)+int(chave)} ")
-            f.close()
+        f.close()
     elif resposta == "2":
         texto = texto.split(" ")
         for i in texto:
             f = open('texto.txt','w')
             f.write(f"{chr(int(i)-int(chave))}")
-            f.close()
+        f.close()
     elif resposta == "3":
         f = open(".chave.txt","w")
         f.write(input("DIGITE A NOVA CHAVE (APENAS NÚMEROS): "))

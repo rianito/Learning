@@ -35,10 +35,10 @@ elif salario_Bruto > 2500:
     desconto = 20
 
 print(f'''
-Salario Bruto ({horas_Trabalhadas} * {valor_Hora})         : R${salario_Bruto}
-(-) IR ({desconto}%)                         : R${salario_Bruto * (desconto/100)}
-(-) Sindicato (3%)                   : R${salario_Bruto * 0.03}
-FGTS (11%)                           : R${salario_Bruto * 0.11}
-Total de descontos                   : R${(salario_Bruto * (desconto/100)) + salario_Bruto * 0.03}
-Salario liquido                      : R${salario_Bruto - (salario_Bruto * 0.03 + (salario_Bruto * (desconto/100)))}
+Salario Bruto ({horas_Trabalhadas} * {valor_Hora})         : R${salario_Bruto:10}
+(-) IR ({desconto}%)                         : R${(salario_Bruto * desconto/100):10}
+(-) Sindicato (3%)                   : R${(salario_Bruto * 0.03):10}
+FGTS (11%)                           : R${(salario_Bruto * 0.11):10}
+Total de descontos                   : R${((salario_Bruto * desconto/100) + salario_Bruto * 0.03):10}
+Salario liquido                      : R${(salario_Bruto - (salario_Bruto * 0.03 + (salario_Bruto * desconto/100))):10}
 ''')
