@@ -3,6 +3,7 @@ chave = f.read()
 f.close()
 f = open("texto.txt","r")
 texto = f.read()
+print(texto)
 f.close()
 
 #Mudei para o split do Python
@@ -26,16 +27,19 @@ while True:
     OUTRO - SAIR
 
     ''')
-
     if resposta == '1':
         f = open('texto.txt','w')
         for i in texto:
+            print(f"achei o: ( {i} )")
             f.write(f"{ord(i)+int(chave)} ")
+
         f.close()
     elif resposta == "2":
         texto = texto.split(" ")
+        texto.pop(-1)
+        f = open('texto.txt','w')
         for i in texto:
-            f = open('texto.txt','w')
+            print(f"achei o : ( {i} )")
             f.write(f"{chr(int(i)-int(chave))}")
         f.close()
     elif resposta == "3":
