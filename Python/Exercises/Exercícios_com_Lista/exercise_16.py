@@ -44,6 +44,4 @@ while True:
     resposta = input('quanto ele vendeu? ')
     if resposta == 'sair':
         break
-    print()
-    print(calcularIntervalo(int(resposta)*0.09+200))
-    print()
+    print(f"\n{calcularIntervalo(int(resposta)*0.09+200)}\n")
