@@ -13,15 +13,46 @@ o valor do aumento;
 o novo salário, após o aumento.
 '''
 
-salario = float(input("Digite o salario: R$"))
-aumento = 0
-if salario <= 280:
-    aumento = 20
-elif salario > 280 and salario < 700:
-    aumento = 15
-elif salario >= 700 and salario < 1500:
-    aumento = 10
-elif salario >= 1500:
-    aumento = 5
+import os
 
-print(f"salario: R${salario}\npercentual de aumento: {aumento}%\nvalor do aumento: R${salario*(aumento/100)}\nnovo salario: R${salario*(1+(aumento/100))}")
+reajuste = {
+    1500: 5,
+    700: 10,
+    280: 15,
+    0: 20
+    }
+
+def clearConsole():
+    tipo = os.name
+    if tipo == "nt":
+        os.system("cls")
+        return True
+    elif tipo == "posix":
+        os.system("clear")
+        return True
+    else:
+        print("Nao foi possivel identificar seu sistema operacional.")
+        exit()
+
+def showResult(salary, percent):
+    print(f'''
+{'='*52}
+{'Salario Anterior:':<32} {salary:<16} R$
+{'Percentual de Aumento:':<32} {percent:<16} %
+{'Valor do Aumento:':<32} {salary * percent/100:<16} R$
+{'Salario Atual:':<32} {salary + salary * percent/100:<16} R$
+{'='*52}
+''')
+
+clearConsole()
+
+while True:
+    try:
+        salary = float(input("Digite o salario: R$"))
+        for i in reajuste.keys():
+            if salary > i:
+                showResult(salary, reajuste[i])
+                break
+        break
+    except ValueError:
+        print("Digite um numero valido.")

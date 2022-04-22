@@ -6,15 +6,26 @@ A mensagem "Reprovado", se a média for menor do que sete;
 A mensagem "Aprovado com Distinção", se a média for igual a dez.
 '''
 
-average = 0 
-for i in range(2):
+def getAverage():
+    grades = 0
+    print("Digite a quantidade de notas que deseja inserir: ")
     while True:
         try:
-            sum += float(input(f"Digite a {i+1}a nota: "))
+            grades = int(input())
             break
         except ValueError:
-            print("Digite um numero valido.")
-average /= 2
+            print("Digite apenas valores inteiros.")
+    sum = 0
+    for i in range(grades):
+        while True:
+            try:
+                sum += float(input(f"Digite a {i+1}a nota: "))
+                break
+            except ValueError:
+                print("Digite um numero valido.")
+    return sum/grades
+
+average = getAverage()
 message = ""
 if average >= 10:
     message = "Aprovado com Dinstincao"

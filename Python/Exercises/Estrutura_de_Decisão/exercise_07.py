@@ -2,24 +2,28 @@
 7. Faça um Programa que leia três números e mostre o maior e o menor deles.
 '''
 
-numeros = []
+numbers = []
+
+def getMax(numbers):
+    max = 0
+    for i in range(len(numbers)):
+        if numbers[i] > numbers[max]:
+            max = i
+    return numbers[max]
+
+def getMin(numbers):
+    min = 0
+    for i in range(len(numbers)):
+        if numbers[i] < numbers[min]:
+            min = i
+    return numbers[min]
 
 for i in range(3):
-    numeros.append(float(input("Digite um numero: ")))
+    while True:
+        try:
+            numbers.append(float(input(f"Digite o {i+1}o numero: ")))
+            break
+        except ValueError:
+            print("Digite um numero valido.")
 
-maior = 0
-menor = 0
-first = True
-
-for i in numeros:
-    if first:
-        first = False
-        maior = i
-        menor = i
-    else:
-        if i > maior:
-            maior = i
-        elif i < menor:
-            menor = i
-
-print(f"O maior numero foi: {maior}\nO menor foi: {menor}")
+print(f"O maior numero foi: {getMax(numbers)}\nO menor foi: {getMin(numbers)}")

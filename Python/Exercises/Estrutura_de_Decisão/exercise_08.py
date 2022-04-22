@@ -3,18 +3,21 @@
 sabendo que a decisão é sempre pelo mais barato.
 '''
 
-precos = []
+prices = []
+
+def getMin(numbers):
+    min = 0
+    for i in range(len(numbers)):
+        if numbers[i] < numbers[min]:
+            min = i
+    return numbers[min]
 
 for i in range(3):
-    precos.append(float(input("Digite o preco: ")))
+    while True:
+        try:
+            prices.append(float(input(f"Digite o preco do {i+1}o produto: ")))
+            break
+        except ValueError:
+            print("Digite um preco valido.")
 
-menor = 0
-first = True
-for i in precos:
-    if first:
-        first = False
-        menor = i
-    else:
-        if i < menor:
-            menor = i
-print(f"O mais barato foi o de: R${menor}")
+print(f"O mais barato foi o de: R${getMin(prices)}")
