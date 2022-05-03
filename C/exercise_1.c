@@ -14,6 +14,5 @@ int main(void) {
       printf("O aluno %i não passou de ano.\n", i);
     }
   }
-  scanf();
   return 0;
 }

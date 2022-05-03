@@ -26,23 +26,19 @@ def clearConsole():
     tipo = os.name
     if tipo == "nt":
         os.system("cls")
-        return True
     elif tipo == "posix":
         os.system("clear")
-        return True
     else:
         print("Nao foi possivel identificar seu sistema operacional.")
         exit()
 
 def showResult(salary, percent):
-    print(f'''
-{'='*52}
-{'Salario Anterior:':<32} {salary:<16} R$
-{'Percentual de Aumento:':<32} {percent:<16} %
-{'Valor do Aumento:':<32} {salary * percent/100:<16} R$
-{'Salario Atual:':<32} {salary + salary * percent/100:<16} R$
-{'='*52}
-''')
+    print(f"{'='*40}")
+    print(f"{'Salario Anterior:':<24} {salary:>12} {'R$':>2}")
+    print(f"{'Percentual de Aumento:':<24} {percent:>12} {'%':>2}")
+    print(f"{'Valor do Aumento:':<24} {salary * percent/100:>12} {'R$':>2}")
+    print(f"{'Salario Atual:':<24} {salary + salary * percent/100:>12} {'R$':>2}")
+    print(f"{'='*40}")
 
 clearConsole()
 

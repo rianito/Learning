@@ -1,0 +1,25 @@
+POST http://localhost:8000/products
+Content-Type: application/json
+
+{
+    "name": "cenoura",
+    "price": 30
+}
+
+###
+GET http://localhost:8000/products
+
+###
+GET http://localhost:8000/products/1
+
+###
+PUT http://localhost:8000/products/1
+Content-Type: application/json
+
+{
+    "name": "batata",
+    "price": 50
+}
+
+###
+DELETE http://localhost:8000/products/2

@@ -42,7 +42,6 @@ codigos = {
 resposta = input().upper()
 traduzido = ""
 for i in resposta:
-        
     if i == " ":
         traduzido += " "
     else:

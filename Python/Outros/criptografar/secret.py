@@ -1,7 +1,7 @@
 f = open(".chave.txt","r")
 chave = f.read()
 f.close()
-f = open("texto.txt","r")
+f = open("texto.txt","r")   
 texto = f.read()
 print(texto)
 f.close()
